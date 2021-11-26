@@ -103,6 +103,45 @@
           },
           "label": "Sold out badge color scheme"
         },
+        "free-shipping_badge_color_scheme": {
+          "options__1": {
+            "label": "Background 2"
+          },
+          "options__2": {
+            "label": "Accent 1"
+          },
+          "options__3": {
+            "label": "Accent 2"
+          },
+          "label": "Free shipping badge color scheme"
+        },
+        "new_badge_color_scheme": {
+          "options__1": {
+            "label": "Background 2"
+          },
+          "options__2": {
+            "label": "Accent 1"
+          },
+          "options__3": {
+            "label": "Accent 2"
+          },
+          "label": "New badge color scheme"
+        },
+        "new_badge_time_scheme": {
+          "label": "New badge time scheme"
+        },
+        "closeout_badge_color_scheme": {
+          "options__1": {
+            "label": "Background 2"
+          },
+          "options__2": {
+            "label": "Accent 1"
+          },
+          "options__3": {
+            "label": "Accent 2"
+          },
+          "label": "Closeout badge color scheme"
+        },
         "accent_icons": {
           "options__1": {
             "label": "Accent 1"

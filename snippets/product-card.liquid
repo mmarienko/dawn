@@ -122,10 +122,23 @@
       {%- endif -%}
 
       <div class="card__badge">
+        {%- liquid
+          assign date_interval = settings.new_badge_time_scheme | times: 30 | times: 24 | times: 60
+          assign date_now = 'now' | date: '%s'
+          assign date_published = product_card_product.created_at | date: '%s'
+          assign date_difference = date_now | minus: date_published
+        -%}
+
         {%- if product_card_product.available == false -%}
-          <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+          <span class="badge badge--sold-out" style="background-color: {{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
-          <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+          <span class="badge badge--sale" style="background-color: {{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+        {%- elsif product_card_product.metafields.badges.free_shipping.value and product_card_product.available -%}
+          <span class="badge badge--free-shipping" style="background-color: {{ settings.free-shipping_badge_color_scheme }}">{{ 'products.product.free_shipping' | t }}</span>
+        {%- elsif date_difference <= date_interval and product_card_product.available -%}
+          <span class="badge badge--new" style="background-color: {{ settings.new_badge_color_scheme }}">{{ 'products.product.new' | t }}</span>
+        {%- elsif product_card_product.metafields.badges.closeout.value and product_card_product.available -%}
+          <span class="badge badge--closeout" style="background-color: {{ settings.closeout_badge_color_scheme }}">{{ 'products.product.closeout' | t }}</span>
         {%- endif -%}
       </div>
     </div>

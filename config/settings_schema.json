@@ -141,40 +141,43 @@
         "content": "t:settings_schema.styles.settings.header__1.content"
       },
       {
-        "type": "select",
+        "type": "color",
         "id": "sale_badge_color_scheme",
-        "options": [
-          {
-            "value": "accent-1",
-            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__2.label"
-          },
-          {
-            "value": "accent-2",
-            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__3.label"
-          },
-          {
-            "value": "background-2",
-            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__1.label"
-          }
-        ],
-        "default": "accent-2",
+        "default": "#b3c3ff",
         "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.label"
       },
       {
-        "type": "select",
+        "type": "color",
         "id": "sold_out_badge_color_scheme",
-        "options": [
-          {
-            "value": "background-1",
-            "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.options__1.label"
-          },
-          {
-            "value": "inverse",
-            "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.options__2.label"
-          }
-        ],
-        "default": "inverse",
+        "default": "#fca9a9",
         "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.label"
+      },
+      {
+        "type": "color",
+        "id": "free-shipping_badge_color_scheme",
+        "default": "#fceb86",
+        "label": "t:settings_schema.styles.settings.free-shipping_badge_color_scheme.label"
+      },
+      {
+        "type": "color",
+        "id": "new_badge_color_scheme",
+        "default": "#cbfab4",
+        "label": "t:settings_schema.styles.settings.new_badge_color_scheme.label"
+      },
+      {
+        "type": "range",
+        "id": "new_badge_time_scheme",
+        "min": 1,
+        "max": 90,
+        "step": 1,
+        "default": 10,
+        "label": "t:settings_schema.styles.settings.new_badge_time_scheme.label"
+      },
+      {
+        "type": "color",
+        "id": "closeout_badge_color_scheme",
+        "default": "#ec8cff",
+        "label": "t:settings_schema.styles.settings.closeout_badge_color_scheme.label"
       },
       {
         "type": "header",

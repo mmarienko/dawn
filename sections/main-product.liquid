@@ -67,6 +67,25 @@
           {{ 'products.product.xr_button' | t }}
         </button>
       {%- endif -%}
+      {%- unless product.available == false or product.compare_at_price > product.price -%}
+        <div class="product__info-badge">
+          {%- liquid
+            assign date_interval = settings.new_badge_time_scheme | times: 30 | times: 24 | times: 60
+      
+            assign date_now = 'now' | date: '%s'
+            assign date_published = product.created_at | date: '%s'
+            assign date_difference = date_now | minus: date_published
+          -%}
+
+            {%- if product.metafields.badges.free_shipping.value and product.available -%}
+              <span class="badge badge--free-shipping" style="background-color: {{ settings.free-shipping_badge_color_scheme }}">{{ 'products.product.free_shipping' | t }}</span>
+            {%- elsif date_difference <= date_interval and product.available -%}
+              <span class="badge badge--new" style="background-color: {{ settings.new_badge_color_scheme }}">{{ 'products.product.new' | t }}</span>
+            {%- elsif product.metafields.badges.closeout.value and product.available -%}
+              <span class="badge badge--closeout" style="background-color: {{ settings.closeout_badge_color_scheme }}">{{ 'products.product.closeout' | t }}</span>
+            {%- endif -%}
+        </div>
+      {%- endunless -%}
     </div>
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
