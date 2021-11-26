@@ -72,6 +72,14 @@
         "collection"
       ]
     },
+    "new_arrivals": {
+      "type": "new-arrivals",
+      "settings": {
+        "title": "New arrivals",
+        "collection": "all",
+        "image_ratio": "square"
+      }
+    },
     "video": {
       "type": "video"
     },
@@ -101,6 +109,7 @@
     "featured_products",
     "collage",
     "video",
+    "new_arrivals",
     "multi_column"
   ]
 }

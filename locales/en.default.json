@@ -256,6 +256,10 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "new_arrivals": {
+      "view_all": "View all products",
+      "view_all_label": "View all products in the {{ collection_name }} collection"
+    },
     "collection_list": {
       "view_all": "View all"
     },
