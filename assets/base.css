@@ -1174,6 +1174,7 @@ deferred-media {
 .button,
 .shopify-challenge__button,
 .customer button {
+  position: relative;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
