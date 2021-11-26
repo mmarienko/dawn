@@ -102,6 +102,9 @@
       "add_to_cart": "Add to cart",
       "description": "Description",
       "on_sale": "Sale",
+      "new": "New",
+      "free_shipping": "Free shipping",
+      "closeout": "Closeout",
       "product_variants": "Product variants",
       "media": {
         "open_featured_media": "Open featured media in gallery view",
@@ -254,6 +257,10 @@
     },
     "featured_collection": {
       "view_all": "View all",
+      "view_all_label": "View all products in the {{ collection_name }} collection"
+    },
+    "new_arrivals": {
+      "view_all": "View all products",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
     "collection_list": {
