@@ -104,10 +104,24 @@
                   </div>
                   <div class="collage-product__badge">
                     <div class="card__badge">
+                      {%- liquid
+                        assign date_interval = settings.new_badge_time_scheme | times: 30 | times: 24 | times: 60
+
+                        assign date_now = 'now' | date: '%s'
+                        assign date_published = block.settings.product.created_at | date: '%s'
+                        assign date_difference = date_now | minus: date_published
+                      -%}
+
                       {%- if block.settings.product.available == false -%}
-                        <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+                        <span class="badge badge--bottom-left" style="background-color: {{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
                       {%- elsif block.settings.product.compare_at_price > block.settings.product.price and block.settings.product.available -%}
-                        <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+                        <span class="badge badge--bottom-left" style="background-color: {{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+                      {%- elsif block.settings.product.metafields.badges.free_shipping.value and block.settings.product.available -%}
+                        <span class="badge badge--bottom-left" style="background-color: {{ settings.free-shipping_badge_color_scheme }}">{{ 'products.product.free_shipping' | t }}</span>
+                      {%- elsif date_difference <= date_interval and block.settings.product.available -%}
+                        <span class="badge badge--bottom-left" style="background-color: {{ settings.new_badge_color_scheme }}">{{ 'products.product.new' | t }}</span>
+                      {%- elsif block.settings.product.metafields.badges.closeout.value and block.settings.product.available -%}
+                        <span class="badge badge--bottom-left" style="background-color: {{ settings.closeout_badge_color_scheme }}">{{ 'products.product.closeout' | t }}</span>
                       {%- endif -%}
                     </div>
                   </div>

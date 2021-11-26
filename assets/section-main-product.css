@@ -8,6 +8,7 @@
 }
 
 .product__media-wrapper {
+  position: relative;
   padding-left: 0;
 }
 
@@ -302,7 +303,6 @@ a.product__text {
 }
 
 .product .price .badge {
-  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -311,14 +311,14 @@ a.product__text {
   margin-bottom: 0.5rem;
 }
 
-.product .price--sold-out .price__badge-sold-out {
-  background: transparent;
-  color: rgb(var(--color-background));
-  border: none;
-}
-
 .product .price--sold-out .price__badge-sale {
   display: none;
+}
+
+.product__info-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 @media screen and (min-width: 750px) {
